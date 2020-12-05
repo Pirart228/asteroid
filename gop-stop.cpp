@@ -1,42 +1,58 @@
 #include<iostream>
-
-
+#include<vector>
+#include<stdlib.h>
 using namespace std;
 
 
 class kalkulator
 {
 private:
-  vector<string> number;
-  static int n;
+  string number;
+  vector<char> simvol = {0};
 public:
-   kalkulator()
-   {
+  void operator=(string a)
+  {
+        number = a;
+  }
 
-   }
 
-   void operator=(string i)
-   {
-      number[n] = i;
-      n++;
-   }
+ void sim(kalkulator &a)
+
+
+  void operator+(kalkulator &a)
+  {
+      for(int i = 0; i < a.number.size(); i++)
+      {
+         a.simvol[i] = a.number[i];
+      }
+
+      for(int i = 0; i < (*this).number.size(); i++)
+      {
+         (*this).simvol[i] = (*this).number[i];
+      }
+
+  }
+
+
+  kalkulator(kalkulator &other)
+  {
+    cout << "iam happy" << endl;
+  }
+  kalkulator(){};
 
 
 };
 
-
-
-
-
 int main()
 {
 
-kalkulator t;
-t = "8347";
+kalkulator a,b,c;
+a = "9741";
+b = "6831";
+b.operator+(a);
 
 
 int x;
 cin >> x;
-
    return 0;
 }
