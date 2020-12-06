@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<utility>
+
 using namespace std;
 
 
@@ -35,7 +36,7 @@ public:
   void operator+(kalkulator &a)
   {
        razbienie_na_char(a);
-       razbienie_na_char();
+       razbienie_na_char(); // argument this
 
   }
 
@@ -47,7 +48,7 @@ public:
 
   kalkulator()
   {
-
+/////// ошибка на make pair
     f[0] = make_pair('0',0);
     f[1] = make_pair('1',1);
     f[2] = make_pair('2',2);
@@ -58,7 +59,6 @@ public:
     f[7] = make_pair('7',7);
     f[8] = make_pair('8',8);
     f[9] = make_pair('9',9);
-    auto[a,b] = f[0];
 
   };
 
@@ -73,9 +73,10 @@ b = "6831";
 b.operator+(a);
 
 
+
+
 int x;
 cin >> x;
-
 
 
    return 0;
